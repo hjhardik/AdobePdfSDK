@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Samples for the DC Services NodeJS SDK
 
 This sample project helps you get started with the DC services SDK.
@@ -187,4 +187,4 @@ node src/ocr/ocr-pdf-with-options.js
 This project is licensed under the MIT License. See [LICENSE](LICENSE.md) for more information.
 =======
 # AdobePdfSDK
->>>>>>> 91a8fd8d9a65b73c0245032a38bba16bdec14ed6
+
