@@ -10,6 +10,16 @@
 <!-- Customize page layout style according to your need and PDF file for best viewing experience -->
 <body style="margin: 100px 0 100px 200px;">
     <div id="adobe-dc-view" style="width: 800px; box-shadow: 1px 1px 10px 1px #dadada;"></div>
-    <script type="text/javascript" src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script type="text/javascript" src="https://documentcloud.adobe.com/view-sdk/main.js">
+    document.addEventListener("adobe_dc_view_sdk.ready", function()
+    {
+        var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
+        adobeDCView.previewFile(
+       {
+          content:   {location: {url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
+          metaData: {fileName: "Bodea Brochure.pdf"}
+       });
+    });
+    </script>
 </body>
 </html>

@@ -28,7 +28,7 @@ function previewFile()
         content: {
             /* Location of file where it is hosted */
             location: {
-                url: "../../output/HardikJoshi.pdf",
+                url: "../HardikJoshi.pdf",
                 /*
                 If the file URL requires some additional headers, then it can be passed as follows:-
                 header: [
