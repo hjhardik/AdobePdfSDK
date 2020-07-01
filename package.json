@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "description": "DC Services Node SDK sample",
   "author": "Adobe",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:adobe/dc-services-sdk-node-samples.git"
+  },
+  "bin" : {
+    "create_pdf" : "src/createpdf/create-pdf-from-static-html.js"
   },
   "dependencies": {
     "@adobe/dc-services-node-sdk": "1.0.0"

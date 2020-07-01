@@ -1,27 +1,14 @@
-/*
- * Copyright 2019 Adobe
- * All Rights Reserved.
- *
- * NOTICE: Adobe permits you to use, modify, and distribute this file in
- * accordance with the terms of the Adobe license agreement accompanying
- * it. If you have received this file from a source other than Adobe,
- * then your use, modification, or distribution of it requires the prior
- * written permission of Adobe.
- */
-
+#!/usr/bin/env node     ///line tell the System that the script should be executed with the first executable named node that’s found in your current PATH. /bin/env is standard Unix utility that looks at your current environment.
 const DCServicesSdk = require('@adobe/dc-services-node-sdk');
-/**
- * This sample illustrates how to convert an HTML file to PDF. The HTML file and its associated dependencies must be
- * in a single ZIP file.
- * <p>
- * Refer to README.md for instructions on how to run the samples.
- */
 
-/**
- * Sets any custom options for the operation.
- *
- * @param htmlToPDFOperation operation instance for which the options are provided.
- */
+var myArgs = process.argv.slice(2);  ///used for arguments passed thorough command line
+/////slice(2) cuts outs the first two arguments which are passed through cmd (that are "node" and thisfile'address)
+
+const sourceZipLoc = myArgs[0];  //source ZIP
+const outputPdfLoc = myArgs[1];  //output pdf
+
+
+
 const setCustomOptions = (htmlToPDFOperation) => {
     // Define the page layout, in this case an 8 x 11.5 inch page (effectively portrait orientation).
     const pageLayout = new DCServicesSdk.CreatePDF.options.PageLayout();
@@ -48,7 +35,7 @@ try {
         htmlToPDFOperation = DCServicesSdk.CreatePDF.Operation.createNew();
 
     // Set operation input from a source file.
-    const input = DCServicesSdk.FileRef.createFromLocalFile('resources/createPDFFromStaticHtmlInput.zip');
+    const input = DCServicesSdk.FileRef.createFromLocalFile(sourceZipLoc);
     htmlToPDFOperation.setInput(input);
 
     // Provide any custom configuration options for the operation.
@@ -56,7 +43,7 @@ try {
 
     // Execute the operation and Save the result to the specified location.
     htmlToPDFOperation.execute(executionContext)
-        .then(result => result.saveAsFile('output/createPdfFromStaticHtmlOutput.pdf'))
+        .then(result => result.saveAsFile(outputPdfLoc))
         .catch(err => {
             if(err instanceof DCServicesSdk.Error.ServiceApiError
                 || err instanceof DCServicesSdk.Error.ServiceUsageError) {
