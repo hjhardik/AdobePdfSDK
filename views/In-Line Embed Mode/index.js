@@ -1,3 +1,12 @@
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-171409849-1', 'auto');
+    ga('send', 'pageview');
+
+
 const viewerConfig = {
     defaultViewMode: "FIT_PAGE",
     embedMode: "IN_LINE"
@@ -34,7 +43,7 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
         /* Pass meta data of file */
         metaData: {
             /* file name */
-            fileName: "Bodea Brochure.pdf"
+            fileName: "file.pdf"
         }
     }, viewerConfig);
 
@@ -43,7 +52,33 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
         AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
         /* call back function */
         function (event) {
-            console.log(event);
+            switch(event.type){
+                case 'DOCUMENT_OPEN': ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'pdf',
+                    eventAction: 'document_open'
+                  });
+                break;
+                case 'PAGE_VIEW' : ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'pdf',
+                    eventAction: 'page_view'
+                  });
+                break;
+                case 'DOCUMENT_DOWNLOAD': ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'pdf',
+                    eventAction: 'document_download'
+                  });
+                break;
+                case 'TEXT_COPY' :  ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'pdf',
+                    eventAction: 'text_copy'
+                  });
+                break;
+                default: ;
+            }
         },
         /* options to control the callback execution */
         {
