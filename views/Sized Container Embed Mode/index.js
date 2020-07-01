@@ -1,16 +1,6 @@
-/*
-Copyright 2019 Adobe
-All Rights Reserved.
-
-NOTICE: Adobe permits you to use, modify, and distribute this file in
-accordance with the terms of the Adobe license agreement accompanying
-it. If you have received this file from a source other than Adobe,
-then your use, modification, or distribution of it requires the prior
-written permission of Adobe.
-*/
-
 /* Pass the embed mode option here */
 var viewerConfig = {
+    defaultViewMode: "FIT_PAGE",
     embedMode: "SIZED_CONTAINER"
 };
 
@@ -48,4 +38,19 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
             fileName: "Bodea Brochure.pdf"
         }
     }, viewerConfig);
+
+    adobeDCView.registerCallback(
+        /* Type of call back */
+        AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
+        /* call back function */
+        function (event) {
+            console.log(event);
+        },
+        /* options to control the callback execution */
+        {
+            /* Enable PDF analytics events on user interaction. */
+            enablePDFAnalytics: true,
+        }
+    );
+
 });

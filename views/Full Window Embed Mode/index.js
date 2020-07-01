@@ -2,7 +2,11 @@
 /* Control the default view mode */
 const viewerConfig = {
     /* Allowed possible values are "FIT_PAGE", "FIT_WIDTH" or "" */
-    defaultViewMode: "",
+    defaultViewMode: "FIT_PAGE",
+    showPageControls : true,
+    showAnnotationTools: true,
+    showDownloadPDF : true,
+    showPrintPDF:true
 };
 
 /* Wait for Adobe Document Cloud View SDK to be ready */
@@ -39,4 +43,20 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
             fileName: "Bodea Brochure.pdf"
         }
     }, viewerConfig);
+
+    adobeDCView.registerCallback(
+        /* Type of call back */
+        AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
+        /* call back function */
+        function (event) {
+            console.log(event);
+        },
+        /* options to control the callback execution */
+        {
+            /* Enable PDF analytics events on user interaction. */
+            enablePDFAnalytics: true,
+        }
+    );
 });
+
+
