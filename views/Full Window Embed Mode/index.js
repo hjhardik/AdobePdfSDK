@@ -15,7 +15,8 @@ const viewerConfig = {
     showAnnotationTools: true,
     showDownloadPDF : true,
     showPrintPDF:true,
-    dockPageControls:true
+    dockPageControls:true,
+    showLeftHandPanel:false
 };
 
 /* Wait for Adobe Document Cloud View SDK to be ready */
