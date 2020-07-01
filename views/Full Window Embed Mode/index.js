@@ -7,10 +7,11 @@
     ga('send', 'pageview');
 
 
-/* Control the default view mode */
+    /* Control the default view mode */
 const viewerConfig = {
     /* Allowed possible values are "FIT_PAGE", "FIT_WIDTH" or "" */
     defaultViewMode: "FIT_PAGE",
+    embedMode="FULL_WINDOW",
     showPageControls : true,
     showAnnotationTools: true,
     showDownloadPDF : true,
@@ -33,16 +34,7 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
         content: {
             /* Location of file where it is hosted */
             location: {
-                url: `../website.pdf`,
-                /*
-                If the file URL requires some additional headers, then it can be passed as follows:-
-                headers: [
-                    {
-                        key: "<HEADER_KEY>",
-                        value: "<HEADER_VALUE>",
-                    }
-                ]
-                */
+                url: "../website.pdf",
             },
         },
         /* Pass meta data of file */
