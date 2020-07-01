@@ -11,7 +11,6 @@
 const viewerConfig = {
     /* Allowed possible values are "FIT_PAGE", "FIT_WIDTH" or "" */
     defaultViewMode: "FIT_PAGE",
-    embedMode="FULL_WINDOW",
     showPageControls : true,
     showAnnotationTools: true,
     showDownloadPDF : true,
