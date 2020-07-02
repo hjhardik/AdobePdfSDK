@@ -55,28 +55,28 @@ function previewFile()
                     hitType: 'event',
                     eventCategory: 'pdf',
                     eventAction: 'document_open',
-                    eventValue:event.data.fileName
+                    eventLabel:event.data.fileName
                   });
                 break;
                 case 'PAGE_VIEW' : ga('send', {
                     hitType: 'event',
                     eventCategory: 'pdf',
                     eventAction: 'page_view',
-                    eventValue:`${event.data.pageNumber},${event.data.fileName}`
+                    eventLabel:`${event.data.pageNumber},${event.data.fileName}`
                   });
                 break;
                 case 'DOCUMENT_DOWNLOAD': ga('send', {
                     hitType: 'event',
                     eventCategory: 'pdf',
                     eventAction: 'document_download',
-                    eventValue:event.data.fileName
+                    eventLabel:event.data.fileName
                   });
                 break;
                 case 'TEXT_COPY' :  ga('send', {
                     hitType: 'event',
                     eventCategory: 'pdf',
                     eventAction: 'text_copy',
-                    eventValue:`${event.data.copiedText},${event.data.fileName}`
+                    eventLabel:`${event.data.copiedText},${event.data.fileName}`
                   });
                 break;
                 default: ;
