@@ -50,6 +50,7 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
         AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
         /* call back function */
         function (event) {
+            console.log('XXXXXXXX');
             console.log(event);
             switch(event.type){
                 case 'DOCUMENT_OPEN': ga('send', {
