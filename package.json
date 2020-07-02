@@ -11,6 +11,7 @@
     "type": "git",
     "url": "git@github.com:adobe/dc-services-sdk-node-samples.git"
   },
+  "preferGlobal": "true",
   "bin" : {
     "create_pdf" : "src/createpdf/create-pdf-from-static-html.js"
   },
