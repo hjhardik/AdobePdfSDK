@@ -53,7 +53,9 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
             console.log('XXXXXXXX');
             console.log(event);
             switch(event.type){
-                case 'DOCUMENT_OPEN': ga('send', {
+                case 'DOCUMENT_OPEN': 
+                    console.log(event.data.fileName);
+                    ga('send', {
                     hitType: 'event',
                     eventCategory: 'pdf',
                     eventAction: 'document_open',
