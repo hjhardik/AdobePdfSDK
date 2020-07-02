@@ -52,29 +52,33 @@ document.addEventListener("adobe_dc_view_sdk.ready", function () {
         AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
         /* call back function */
         function (event) {
-            switch(event.type){
+          switch(event.type){
                 case 'DOCUMENT_OPEN': ga('send', {
                     hitType: 'event',
                     eventCategory: 'pdf',
-                    eventAction: 'document_open'
+                    eventAction: 'document_open',
+                    eventValue:event.data.fileName
                   });
                 break;
                 case 'PAGE_VIEW' : ga('send', {
                     hitType: 'event',
                     eventCategory: 'pdf',
-                    eventAction: 'page_view'
+                    eventAction: 'page_view',
+                    eventValue:`${event.data.pageNumber},${event.data.fileName}`
                   });
                 break;
                 case 'DOCUMENT_DOWNLOAD': ga('send', {
                     hitType: 'event',
                     eventCategory: 'pdf',
-                    eventAction: 'document_download'
+                    eventAction: 'document_download',
+                    eventValue:event.data.fileName
                   });
                 break;
                 case 'TEXT_COPY' :  ga('send', {
                     hitType: 'event',
                     eventCategory: 'pdf',
-                    eventAction: 'text_copy'
+                    eventAction: 'text_copy',
+                    eventValue:`${event.data.copiedText},${event.data.fileName}`
                   });
                 break;
                 default: ;
