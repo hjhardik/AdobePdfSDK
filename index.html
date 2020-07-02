@@ -44,71 +44,58 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
-        <a class="navbar-brand" href="#"style="color: #fff;">Adobe SDK</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav ml-auto mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#fullwindow" style="color: #fff;">Full Window</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#sized-container" style="color: #fff;">Sized Container</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#inline"style="color: #fff;"  >Inline</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#lightbox"style="color: #fff;">Lightbox</a>
-            </li>
-          </ul>
+        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Full Window</a>
+        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Sized Container</a>
+        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Inline</a>
+        <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false">Light box</a>
+      </div>
+
+      <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+          <div id="fullwindow">
+            <div class="container">
+              <i class="fas fa-circle" style="color: red;"></i>
+              <i class="fas fa-circle" style="color: yellow;"></i>
+              <i class="fas fa-circle" style="color: green"></i> 
+              <span><h2>Full Window</h2></span>      
+              <iframe src="views\Full Window Embed Mode\index.html" height="700" width="800"></iframe>
+            </div>
+            </div>
         </div>
-      </nav>
-      
-    <div id="fullwindow">
-    <div class="container">
-      <i class="fas fa-circle" style="color: red;"></i>
-      <i class="fas fa-circle" style="color: yellow;"></i>
-      <i class="fas fa-circle" style="color: green"></i> 
-      <span><h2>Full Window</h2></span>      
-      <iframe src="views\Full Window Embed Mode\index.html" height="700" width="800"></iframe>
-    </div>
-    </div>
-    <div id="sized-container">
-      <div class="container">
-        <i class="fas fa-circle" style="color: red;"></i>
-        <i class="fas fa-circle" style="color: yellow;"></i>
-        <i class="fas fa-circle" style="color: green"></i>
-        <span><h2>Sized Container</h2></span>      
-        <iframe src="views\Sized Container Embed Mode\index.html" height="700" width="800"></iframe>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <div id="sized-container">
+            <div class="container">
+              <i class="fas fa-circle" style="color: red;"></i>
+              <i class="fas fa-circle" style="color: yellow;"></i>
+              <i class="fas fa-circle" style="color: green"></i>
+              <span><h2>Sized Container</h2></span>      
+              <iframe src="views\Sized Container Embed Mode\index.html" height="700" width="800"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <div id="inline">
+            <div class="container">
+              <i class="fas fa-circle" style="color: red;"></i>
+            <i class="fas fa-circle" style="color: yellow;"></i>
+            <i class="fas fa-circle" style="color: green"></i>
+            <span><h2>Inline</h2></span>      
+            <iframe src="views\In-Line Embed Mode\index.html" height="700" width="800"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+          <div id="lightbox">
+            <div class="container">      
+            <i class="fas fa-circle" style="color: red;"></i>
+            <i class="fas fa-circle" style="color: yellow;"></i>
+            <i class="fas fa-circle" style="color: green"></i>
+            <span><h2>Light Box</h2></span>      
+            <iframe src="views\Lightbox Embed Mode\index.html" height="700" width="800"></iframe>
+            </div>
+          </div>
+        </div>
       </div>
-
-      </div>
-
-    <div id="inline">
-      <div class="container">
-        <i class="fas fa-circle" style="color: red;"></i>
-      <i class="fas fa-circle" style="color: yellow;"></i>
-      <i class="fas fa-circle" style="color: green"></i>
-      <span><h2>Inline</h2></span>      
-
-      <iframe src="views\In-Line Embed Mode\index.html" height="700" width="800"></iframe>
-      </div>
-
-    </div>
-    <div id="lightbox">
-      <div class="container">      
-        <i class="fas fa-circle" style="color: red;"></i>
-      <i class="fas fa-circle" style="color: yellow;"></i>
-      <i class="fas fa-circle" style="color: green"></i>
-      <span><h2>Light Box</h2></span>      
-      <iframe src="views\Lightbox Embed Mode\index.html" height="700" width="800"></iframe>
-      </div>
-
-    </div>
-
 </body>
-
 </html>
